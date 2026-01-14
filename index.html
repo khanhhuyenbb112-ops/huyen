@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meichun Liu 的教學網站</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; background: #f0f2f5; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .tab-buttons { display: flex; justify-content: space-around; margin-bottom: 20px; background: #eee; border-radius: 8px; padding: 5px; }
+        .tab-btn { padding: 10px 20px; border: none; background: none; cursor: pointer; font-weight: bold; color: #555; border-radius: 5px; }
+        .tab-btn.active { background: #3498db; color: white; }
+        .tab-content { display: none; border-top: 1px solid #ddd; padding-top: 20px; }
+        .tab-content.active { display: block; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background: #3498db; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .pinyin { color: #888; font-size: 0.9em; }
+        .speaker { font-weight: bold; color: #2980b9; min-width: 80px; display: inline-block; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Meichun Liu 的學習網站</h1>
+    
+    <div class="tab-buttons">
+        <button class="tab-btn active" onclick="openTab('duihua')">Hội thoại</button>
+        <button class="tab-btn" onclick="openTab('duanwen')">Đoạn văn</button>
+        <button class="tab-btn" onclick="openTab('shengci')">Từ vựng</button>
+    </div>
+
+    <div id="duihua" class="tab-content active">
+        <h3>第一課：開學了</h3>
+        <p><span class="speaker">安德思:</span> 羅珊蒂,下課啦!怎麼樣?你們班上有我們上個學期的同學嗎?</p>
+        <p><span class="speaker">羅珊蒂:</span> 沒有,都沒有。你們班怎麼樣?</p>
+        <p><span class="speaker">安德思:</span> 都是新生,我一個也不認識,而且只有我一個男的</p>
+        <p>... (Nội dung tiếp theo tương tự như văn bản của bạn) ...</p>
+    </div>
+
+    <div id="duanwen" class="tab-content">
+        <h3>第一課：何雅婷要轉系</h3>
+        <p style="text-indent: 2em;">何雅婷是家裡的獨生女。從小父母讓她念私立小學,下了課還去學西班牙文、書法、游泳跟網球...</p>
+        <p style="text-indent: 2em;">媽媽聽到何雅婷打算轉到國際關係系,非常生氣...</p>
+    </div>
+
+    <div id="shengci" class="tab-content">
+        <h3>L1 生詞表</h3>
+        <table>
+            <tr><th>Chinese</th><th>Tiếng Việt</th></tr>
+            <tr><td>報告 <span class="pinyin">(bào gào)</span></td><td>báo cáo</td></tr>
+            <tr><td>嚴 <span class="pinyin">(yán)</span></td><td>nghiêm khắc</td></tr>
+            <tr><td>壓力 <span class="pinyin">(yā lì)</span></td><td>áp lực</td></tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    function openTab(tabName) {
+        var i, content, buttons;
+        content = document.getElementsByClassName("tab-content");
+        for (i = 0; i < content.length; i++) { content[i].style.display = "none"; }
+        buttons = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < buttons.length; i++) { buttons[i].className = buttons[i].className.replace(" active", ""); }
+        document.getElementById(tabName).style.display = "block";
+        event.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
